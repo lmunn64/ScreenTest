@@ -33,14 +33,14 @@ public class Main {
         frame.getContentPane().add(blueLabel, BorderLayout.CENTER);
 
         JLabel topLabel = new JLabel();
-        blueLabel.add(topLabel);
         topLabel.setPreferredSize(new Dimension(360,240));
         topLabel.setVisible(true);
-        blueLabel.add(topLabel);
-        frame.getContentPane().add(topLabel, BorderLayout.CENTER);
+        blueLabel.add(topLabel, SwingConstants.CENTER);
+        frame.getContentPane().add(topLabel);
         //setting blueLabels contents alignment
         blueLabel.setHorizontalAlignment(SwingConstants.CENTER);
         blueLabel.setVerticalAlignment(SwingConstants.CENTER);
+        
         //Create button
         JButton button = new JButton("Dont Press Me");
         button.setBounds(290, 240, 150, 20);
@@ -54,9 +54,6 @@ public class Main {
         blueLabel.add(button);
 
         frame.setLayout(new FlowLayout());
-//        JScrollPane scrollPane = new JScrollPane(label);
-//        frame.add(label);
-
         //display window
         frame.pack();
         frame.setVisible(true);
@@ -65,7 +62,7 @@ public class Main {
     public static void loadImage(ImageIcon img){
         try{
             BufferedImage loadedImage = null;
-            loadedImage = ImageIO.read(new FileInputStream("C:\\Users\\lmunn\\Desktop\\miniProjects\\screenTest\\image\\pic.png"));
+            loadedImage = ImageIO.read(new FileInputStream("src/image/pic.png"));
             img.setImage(loadedImage);
         } catch (IOException e) {
             throw new RuntimeException(e);
